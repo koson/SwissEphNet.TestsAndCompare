@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -82,6 +83,9 @@
     <Compile Include="Providers\SwissEphNetProvider.cs" />
     <Compile Include="Providers\SwephDllProviderFactory.cs" />
     <Compile Include="Providers\SwissEphNetProviderFactory.cs" />
+    <Compile Include="ResultTestView.xaml.cs">
+      <DependentUpon>ResultTestView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="Tests\ITest.cs" />
     <Compile Include="Tests\ResultTest.cs" />
@@ -90,6 +94,7 @@
     <Compile Include="ViewModels\FactoryViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ModelLocator.cs" />
+    <Compile Include="ViewModels\ResultTestViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +108,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ResultTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

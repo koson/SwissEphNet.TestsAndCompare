@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="SwissEphNetTests.ResultTestView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SwissEphNetTests"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="289" d:DesignWidth="662">
+    <UserControl.Resources>
+        <sys:Double x:Key="HeaderColumnWidth">120</sys:Double>
+        <sys:Double x:Key="DataColumnWidth">180</sys:Double>
+        <GridLength x:Key="HeaderColumnGridLength">120</GridLength>
+        <GridLength x:Key="DataColumnGridLength">180</GridLength>
+
+        <SolidColorBrush x:Key="BorderBrush" Color="LightGray" />
+
+        <DataTemplate x:Key="FirstRowHeaderTemplate">
+            <Border Width="{StaticResource HeaderColumnWidth}">
+            </Border>
+        </DataTemplate>
+        <DataTemplate x:Key="RowHeaderTemplate">
+            <Border Width="{StaticResource HeaderColumnWidth}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0" Padding="2">
+                <TextBlock Text="{Binding}" FontWeight="SemiBold" Foreground="Gray" />
+            </Border>
+        </DataTemplate>
+        <DataTemplate x:Key="ColHeaderTemplate">
+            <Border Width="{StaticResource DataColumnWidth}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1,0,0,0" Padding="2">
+                <TextBlock Text="{Binding}" HorizontalAlignment="Center" FontWeight="Bold" />
+            </Border>
+        </DataTemplate>
+        <DataTemplate x:Key="CellTemplate">
+            <Border Width="{StaticResource DataColumnWidth}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1,1,0,0" Padding="2">
+                <TextBlock Text="{Binding Value}" HorizontalAlignment="Right" />
+            </Border>
+        </DataTemplate>
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="2">
+            <TextBlock Text="{Binding Test.Title}" FontWeight="Bold" />
+            <TextBlock Text="{Binding Test.Description}" TextWrapping="Wrap" />
+        </StackPanel>
+
+        <Border Grid.Column="1" Margin="2" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" VerticalAlignment="Top">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl ContentTemplate="{StaticResource FirstRowHeaderTemplate}" />
+                    <ItemsControl ItemsSource="{Binding Providers}" Grid.Column="1">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ContentControl ContentTemplate="{StaticResource ColHeaderTemplate}" Content="{Binding}" DataContext="{Binding}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel IsItemsHost="true" Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Grid>
+
+                <ItemsControl Grid.Row="1" ItemsSource="{Binding Rows}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <ContentControl Content="{Binding Name}" ContentTemplate="{StaticResource RowHeaderTemplate}" />
+
+                                <ItemsControl ItemsSource="{Binding Cells}" Grid.Column="1">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <ContentControl ContentTemplate="{StaticResource CellTemplate}" Content="{Binding}" DataContext="{Binding}" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel IsItemsHost="true" Orientation="Horizontal" />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>

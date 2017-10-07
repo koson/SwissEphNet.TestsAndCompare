@@ -41,7 +41,7 @@ namespace SwissEphNetTests.Providers
         /// Get the library version
         /// </summary>
         /// <returns>Number represents version</returns>
-        [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "_swe_version@4")]
+        [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_version")]
         private extern static IntPtr _swe_version(StringBuilder buff);
         public static string SweVersion()
         {

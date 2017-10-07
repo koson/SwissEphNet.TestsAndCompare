@@ -14,7 +14,7 @@
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" MaxWidth="200" />
+                <ColumnDefinition Width="Auto" MaxWidth="280" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <StackPanel>
@@ -25,7 +25,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
                                     <TextBlock Text=" : "/>
-                                    <TextBlock Text="{Binding Version}"/>
+                                    <TextBlock Text="{Binding Version}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Version}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -65,56 +65,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="200" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Test.Title}" FontWeight="Bold" />
-                                    <TextBlock Text="{Binding Test.Description}" TextWrapping="Wrap" />
-                                </StackPanel>
-
-                                <Grid Grid.Column="1" Width="160">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="24" />
-                                        <RowDefinition />
-                                    </Grid.RowDefinitions>
-
-                                    <ItemsControl Grid.Row="1" ItemsSource="{Binding ValueNames}">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding}" />
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </Grid>
-                                                                
-                                <ItemsControl Grid.Column="2" ItemsSource="{Binding TestValues}" Margin="0">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid Width="180">
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="24" />
-                                                    <RowDefinition />
-                                                </Grid.RowDefinitions>
-                                                <TextBlock Text="{Binding Key}" FontWeight="Bold" />
-                                                <ItemsControl Grid.Row="1" ItemsSource="{Binding Value.Values}">
-                                                    <ItemsControl.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <TextBlock Text="{Binding Value}" />
-                                                        </DataTemplate>
-                                                    </ItemsControl.ItemTemplate>
-                                                </ItemsControl>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel IsItemsHost="True" Orientation="Horizontal" />
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                </ItemsControl>
+                                <local:ResultTestView Grid.Row="1" Grid.ColumnSpan="3" DataContext="{Binding}" HorizontalAlignment="Left"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

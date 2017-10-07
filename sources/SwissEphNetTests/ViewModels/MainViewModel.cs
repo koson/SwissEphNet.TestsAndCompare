@@ -17,7 +17,7 @@ namespace SwissEphNetTests.ViewModels
         {
             Factories = new ObservableCollection<FactoryViewModel>();
             Tests = new ObservableCollection<TestViewModel>();
-            TestResults = new ObservableCollection<ResultTest>();
+            TestResults = new ObservableCollection<ResultTestViewModel>();
 
             RunTestsCommand = new RelayCommand(
                 async () => await RunTestsAsync(),
@@ -88,13 +88,13 @@ namespace SwissEphNetTests.ViewModels
                 var tests = Tests.Where(t => t.IsSelected).Select(t => t.Test).ToList();
                 var providers = Factories.Select(f => f.Factory.CreateProvider()).ToList();
                 TestResults.Clear();
-                IProgress<ResultTest> progress = new Progress<ResultTest>(r => TestResults.Add(r));
+                IProgress<ResultTestViewModel> progress = new Progress<ResultTestViewModel>(r => TestResults.Add(r));
                 await Task.Run(() =>
                 {
                     foreach (var test in tests)
                     {
                         var result = test.RunTest(providers);
-                        progress.Report(result);
+                        progress.Report(new ResultTestViewModel { Result = result });
                     }
                 });
                 foreach (var provider in providers)
@@ -110,7 +110,7 @@ namespace SwissEphNetTests.ViewModels
 
         public ObservableCollection<TestViewModel> Tests { get; private set; }
 
-        public ObservableCollection<ResultTest> TestResults { get; private set; }
+        public ObservableCollection<ResultTestViewModel> TestResults { get; private set; }
 
         public bool IsBusy
         {
