@@ -26,10 +26,15 @@ namespace SwissEphNetTests
             Loaded += MainWindow_Loaded;
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        async Task LoadTests()
+        {
+            await App.Locator.Main?.LoadTestsAsync();
+        }
+
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             DataContext = App.Locator.Main;
-            App.Locator.Main?.LoadVersions();
+            await LoadTests();
         }
     }
 }

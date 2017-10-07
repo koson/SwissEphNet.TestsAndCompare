@@ -50,6 +50,7 @@
       <HintPath>..\packages\SwissEphNet.2.6.0.21\lib\net40\SwissEphNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -73,6 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Providers\ISwephProvider.cs" />
     <Compile Include="Providers\ISwephProviderFactory.cs" />
     <Compile Include="Providers\SwephDll.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Providers\SwissEphNetProvider.cs" />
     <Compile Include="Providers\SwephDllProviderFactory.cs" />
     <Compile Include="Providers\SwissEphNetProviderFactory.cs" />
+    <Compile Include="ViewModels\FactoryViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ModelLocator.cs" />
     <Page Include="MainWindow.xaml">

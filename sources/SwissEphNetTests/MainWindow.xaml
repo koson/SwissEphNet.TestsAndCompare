@@ -4,20 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SwissEphNetTests"
+        xmlns:conv="clr-namespace:SwissEphNetTests.Converters"
         mc:Ignorable="d"
         WindowState="Maximized"
         Title="Swiss Ephemeris Libraries - Tests" Height="350" Width="525">
+    <Window.Resources>
+        <conv:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
     <Grid>
-        <ItemsControl ItemsSource="{Binding Versions}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Item1}"/>
-                        <TextBlock Text=" => "/>
-                        <TextBlock Text="{Binding Item2}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <Grid>
+            <GroupBox Header="Providers">
+                <ItemsControl ItemsSource="{Binding Factories}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                <TextBlock Text=" : "/>
+                                <TextBlock Text="{Binding Version}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </GroupBox>
+        </Grid>
+        <Grid x:Name="grdBusy" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Border Background="White" Opacity="0.75"></Border>
+            <ProgressBar VerticalAlignment="Center" Margin="24" Height="8" IsIndeterminate="True"/>
+        </Grid>
     </Grid>
 </Window>

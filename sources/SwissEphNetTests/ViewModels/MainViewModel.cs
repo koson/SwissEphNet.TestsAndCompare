@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,31 +13,50 @@ namespace SwissEphNetTests.ViewModels
     {
         public MainViewModel()
         {
-            Factories = new ObservableCollection<Providers.ISwephProviderFactory>
-            {
-                new Providers.SwephDllProviderFactory(),
-                new Providers.SwissEphNetProviderFactory()
-            };
-            Versions = new ObservableCollection<Tuple<string, string>>();
+            Factories = new ObservableCollection<FactoryViewModel>();
         }
 
-        public void LoadVersions()
+        public async Task LoadTestsAsync()
         {
-            foreach (var fact in Factories)
+            IsBusy = true;
+            var result = await Task.Run(() =>
             {
-                try
+                var catalog = new AssemblyCatalog(this.GetType().Assembly);
+                CompositionContainer container = new CompositionContainer(catalog);
+                List<FactoryViewModel> factories = new List<FactoryViewModel>();
+                foreach (var factory in container.GetExports<Providers.ISwephProviderFactory>())
                 {
-                    using (var provider = fact.CreateProvider())
-                        Versions.Add(Tuple.Create(provider.Name, provider.GetVersion()));
+                    var vm = new FactoryViewModel
+                    {
+                        Factory = factory.Value
+                    };
+                    try
+                    {
+                        using (var provider = vm.Factory.CreateProvider())
+                            vm.Version = provider.GetVersion();
+                    }
+                    catch (Exception ex)
+                    {
+                        vm.Version = $"ERR: {ex.Message}";
+                    }
+                    factories.Add(vm);
                 }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine(ex.Message);
-                }
-            }
+                return factories;
+            });
+            Factories.Clear();
+            foreach (var f in result)
+                Factories.Add(f);
+            IsBusy = false;
         }
 
-        public ObservableCollection<Providers.ISwephProviderFactory> Factories { get; private set; }
-        public ObservableCollection<Tuple<string, string>> Versions { get; private set; }
+        public ObservableCollection<FactoryViewModel> Factories { get; private set; }
+
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            private set { Set(ref _isBusy, value); }
+        }
+        private bool _isBusy;
+
     }
 }
