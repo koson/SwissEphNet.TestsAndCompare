@@ -5,14 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SwissEphNetTests"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:conv="clr-namespace:SwissEphNetTests.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="289" d:DesignWidth="662">
     <UserControl.Resources>
-        <sys:Double x:Key="HeaderColumnWidth">120</sys:Double>
-        <sys:Double x:Key="DataColumnWidth">180</sys:Double>
-        <GridLength x:Key="HeaderColumnGridLength">120</GridLength>
-        <GridLength x:Key="DataColumnGridLength">180</GridLength>
+        <sys:Double x:Key="HeaderColumnWidth">180</sys:Double>
+        <sys:Double x:Key="DataColumnWidth">220</sys:Double>
+        <!--<GridLength x:Key="HeaderColumnGridLength">120</GridLength>
+        <GridLength x:Key="DataColumnGridLength">180</GridLength>-->
 
+        <conv:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        
         <SolidColorBrush x:Key="BorderBrush" Color="LightGray" />
 
         <DataTemplate x:Key="FirstRowHeaderTemplate">
@@ -21,7 +24,10 @@
         </DataTemplate>
         <DataTemplate x:Key="RowHeaderTemplate">
             <Border Width="{StaticResource HeaderColumnWidth}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,1,0,0" Padding="2">
-                <TextBlock Text="{Binding}" FontWeight="SemiBold" Foreground="Gray" />
+                <Grid>
+                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" Foreground="Gray" />
+                    <Ellipse Width="12" Height="12" Fill="Red" HorizontalAlignment="Right" Visibility="{Binding IsFailed, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                </Grid>
             </Border>
         </DataTemplate>
         <DataTemplate x:Key="ColHeaderTemplate">
@@ -31,6 +37,15 @@
         </DataTemplate>
         <DataTemplate x:Key="CellTemplate">
             <Border Width="{StaticResource DataColumnWidth}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1,1,0,0" Padding="2">
+                <Border.Resources>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsFailed}" Value="True">
+                                <Setter Property="Foreground" Value="Red" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Resources>
                 <TextBlock Text="{Binding Value}" HorizontalAlignment="Right" TextWrapping="Wrap" />
             </Border>
         </DataTemplate>
@@ -43,7 +58,16 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Margin="2">
-            <TextBlock Text="{Binding Test.Title}" FontWeight="Bold" />
+            <StackPanel.Resources>
+                <Style x:Key="TitleText" TargetType="TextBlock">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Success}" Value="False">
+                            <Setter Property="Foreground" Value="Red" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="{Binding Test.Title}" FontWeight="Bold" Style="{StaticResource TitleText}" />
             <TextBlock Text="{Binding Test.Description}" TextWrapping="Wrap" />
         </StackPanel>
 
@@ -83,7 +107,7 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <ContentControl Content="{Binding Name}" ContentTemplate="{StaticResource RowHeaderTemplate}" />
+                                <ContentControl Content="{Binding}" ContentTemplate="{StaticResource RowHeaderTemplate}" />
 
                                 <ItemsControl ItemsSource="{Binding Cells}" Grid.Column="1">
                                     <ItemsControl.ItemTemplate>

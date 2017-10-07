@@ -30,7 +30,7 @@ namespace SwissEphNetTests.Tests
         /// <summary>
         /// The test is a success
         /// </summary>
-        public bool Success { get; set; }
+        public bool Success { get; set; } = true;
     }
 
 }

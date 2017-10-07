@@ -15,6 +15,7 @@ namespace SwissEphNetTests.ViewModels
         {
             public string Name { get; set; }
             public List<CellData> Cells { get; private set; } = new List<CellData>();
+            public bool IsFailed => Cells.Any(c => c.IsFailed);
         }
 
         public class CellData
@@ -22,6 +23,8 @@ namespace SwissEphNetTests.ViewModels
             public RowData Row { get; set; }
             public ResultTestValues Values { get; set; }
             public object Value { get; set; }
+            public int CompareErrors { get; set; }
+            public bool IsFailed => CompareErrors > 0;
         }
 
         void UpdateModel()
@@ -33,17 +36,27 @@ namespace SwissEphNetTests.ViewModels
                 foreach (string name in ValueNames)
                 {
                     var row = new RowData { Name = name };
-                    foreach (var vals in values)
+                    for (int i = 0, cnt = values.Count; i < cnt; i++)
                     {
+                        var vals = values[i];
                         vals.Values.TryGetValue(name, out object cval);
-                        row.Cells.Add(new CellData
+                        var cell = new CellData
                         {
                             Row = row,
                             Values = vals,
                             Value = cval
-                        });
+                        };
+                        row.Cells.Add(cell);
+                        for (int j = 0; j < i; j++)
+                        {
+                            values[j].Values.TryGetValue(name, out object tval);
+                            if (!object.Equals(cval, tval))
+                                cell.CompareErrors++;
+                        }
                     }
                     Rows.Add(row);
+                    if (row.IsFailed)
+                        Result.Success = false;
                 }
             }
             RaisePropertyChanged(string.Empty);

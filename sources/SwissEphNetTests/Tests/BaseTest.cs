@@ -31,6 +31,7 @@ namespace SwissEphNetTests.Tests
         public virtual ResultTest RunTest(IEnumerable<Providers.ISwephProvider> providers)
         {
             var result = new ResultTest { Test = this };
+
             // Run the test
             foreach (var provider in providers)
             {
