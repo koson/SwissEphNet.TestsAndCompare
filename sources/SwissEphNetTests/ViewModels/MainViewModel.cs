@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using SwissEphNetTests.Tests;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,12 @@ namespace SwissEphNetTests.ViewModels
         {
             Factories = new ObservableCollection<FactoryViewModel>();
             Tests = new ObservableCollection<TestViewModel>();
+            TestResults = new ObservableCollection<ResultTest>();
+
+            RunTestsCommand = new RelayCommand(
+                async () => await RunTestsAsync(),
+                () => !IsBusy
+                );
         }
 
         public async Task LoadTestsAsync()
@@ -72,16 +79,53 @@ namespace SwissEphNetTests.ViewModels
             IsBusy = false;
         }
 
+        public async Task RunTestsAsync()
+        {
+            if (IsBusy) return;
+            IsBusy = true;
+            try
+            {
+                var tests = Tests.Where(t => t.IsSelected).Select(t => t.Test).ToList();
+                var providers = Factories.Select(f => f.Factory.CreateProvider()).ToList();
+                TestResults.Clear();
+                IProgress<ResultTest> progress = new Progress<ResultTest>(r => TestResults.Add(r));
+                await Task.Run(() =>
+                {
+                    foreach (var test in tests)
+                    {
+                        var result = test.RunTest(providers);
+                        progress.Report(result);
+                    }
+                });
+                foreach (var provider in providers)
+                    provider.Dispose();
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
         public ObservableCollection<FactoryViewModel> Factories { get; private set; }
 
         public ObservableCollection<TestViewModel> Tests { get; private set; }
 
+        public ObservableCollection<ResultTest> TestResults { get; private set; }
+
         public bool IsBusy
         {
             get { return _isBusy; }
-            private set { Set(ref _isBusy, value); }
+            private set
+            {
+                if (Set(ref _isBusy, value))
+                {
+                    RunTestsCommand.RaiseCanExecuteChanged();
+                }
+            }
         }
         private bool _isBusy;
+
+        public RelayCommand RunTestsCommand { get; private set; }
 
     }
 }

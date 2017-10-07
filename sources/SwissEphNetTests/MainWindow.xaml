@@ -50,6 +50,77 @@
                     </ListBox>
                 </GroupBox>
             </StackPanel>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <StackPanel Margin="4">
+                    <Button Content="Run selected tests" Command="{Binding RunTestsCommand}" />
+                </StackPanel>
+
+                <ListBox ItemsSource="{Binding TestResults}" Grid.Row="1" Margin="4">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Test.Title}" FontWeight="Bold" />
+                                    <TextBlock Text="{Binding Test.Description}" TextWrapping="Wrap" />
+                                </StackPanel>
+
+                                <Grid Grid.Column="1" Width="160">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="24" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+
+                                    <ItemsControl Grid.Row="1" ItemsSource="{Binding ValueNames}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding}" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Grid>
+                                                                
+                                <ItemsControl Grid.Column="2" ItemsSource="{Binding TestValues}" Margin="0">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="180">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="24" />
+                                                    <RowDefinition />
+                                                </Grid.RowDefinitions>
+                                                <TextBlock Text="{Binding Key}" FontWeight="Bold" />
+                                                <ItemsControl Grid.Row="1" ItemsSource="{Binding Value.Values}">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding Value}" />
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel IsItemsHost="True" Orientation="Horizontal" />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>                
+            </Grid>
+            
         </Grid>
         <Grid x:Name="grdBusy" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Border Background="White" Opacity="0.75"></Border>

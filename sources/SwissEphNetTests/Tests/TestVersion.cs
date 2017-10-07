@@ -4,6 +4,7 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SwissEphNetTests.Providers;
 
 namespace SwissEphNetTests.Tests
 {
@@ -14,6 +15,10 @@ namespace SwissEphNetTests.Tests
         {
             Title = "Test versions";
             Description = "Test the versions of the libraries";
+        }
+        protected override void RunTest(ResultTestValues result, ISwephProvider provider)
+        {
+            result.Values["version"] = provider.GetVersion();
         }
     }
 }
