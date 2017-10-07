@@ -80,7 +80,7 @@ namespace SwissEphNetTests.ViewModels
         /// <summary>
         /// List of values
         /// </summary>
-        public Dictionary<string, ResultTestValues> TestValues => Result?.TestValues;
+        public IList<ResultTestValues> TestValues => Result?.TestValues.Values.OrderBy(v => v.Provider.Name).ToList();
 
         /// <summary>
         /// List of all values names
@@ -91,11 +91,6 @@ namespace SwissEphNetTests.ViewModels
         /// The test is a success
         /// </summary>
         public bool Success => Result?.Success ?? false;
-
-        /// <summary>
-        /// List of provider names
-        /// </summary>
-        public IList<string> Providers => Result?.TestValues.Keys.ToList();
 
         /// <summary>
         /// Rows of data

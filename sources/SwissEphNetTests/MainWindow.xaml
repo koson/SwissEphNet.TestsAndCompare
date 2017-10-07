@@ -61,7 +61,7 @@
                     <Button Content="Run selected tests" Command="{Binding RunTestsCommand}" />
                 </StackPanel>
 
-                <ListBox ItemsSource="{Binding TestResults}" Grid.Row="1" Margin="4">
+                <ListBox ItemsSource="{Binding TestResults}" Grid.Row="1" Margin="4" ScrollViewer.CanContentScroll="False">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>

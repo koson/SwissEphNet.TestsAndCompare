@@ -56,6 +56,17 @@ namespace SwissEphNetTests.Providers
             Sweph.swe_revjul(jd, gregorian ? SwissEph.SE_GREG_CAL : SwissEph.SE_JUL_CAL, ref year, ref mon, ref mday, ref hour);
         }
 
+        public string SweGetPlanetName(int ipl)
+        {
+            return Sweph.swe_get_planet_name(ipl);
+        }
+
+        public int SweCalcUT(double tjd_ut, int ipl, int iflag, ref double[] xx, ref string serr)
+        {
+            xx = new double[32];
+            return Sweph.swe_calc_ut(tjd_ut, ipl, iflag, xx, ref serr);
+        }
+
         public string Name => "SwissEph.Net";
 
         protected SwissEph Sweph { get { CheckDisposed(); return _sweph; } }

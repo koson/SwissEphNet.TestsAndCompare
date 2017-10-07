@@ -41,6 +41,16 @@ namespace SwissEphNetTests.Providers
             SwephDll.SweRevjul(jd, gregorian ? SwephDll.SE_GREG_CAL : SwephDll.SE_JUL_CAL, ref year, ref mon, ref mday, ref hour);
         }
 
+        public string SweGetPlanetName(int ipl)
+        {
+            return SwephDll.SweGetPlanetName(ipl);
+        }
+
+        public int SweCalcUT(double tjd_ut, int ipl, int iflag, ref double[] xx, ref string serr)
+        {
+            return SwephDll.SweCalcUT(tjd_ut, ipl, iflag, ref xx, ref serr);
+        }
+
         public string Name => "Swiss Ephemeris DLL";
     }
 }

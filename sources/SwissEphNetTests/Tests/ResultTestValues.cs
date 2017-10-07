@@ -25,5 +25,10 @@ namespace SwissEphNetTests.Tests
         /// Error if failed
         /// </summary>
         public Exception Error { get; set; }
+
+        /// <summary>
+        /// Delay of the test
+        /// </summary>
+        public TimeSpan TestDelay { get; set; }
     }
 }

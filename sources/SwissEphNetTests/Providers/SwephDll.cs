@@ -331,6 +331,25 @@ namespace SwissEphNetTests.Providers
         [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_revjul")]
         public extern static void SweRevjul(double jd, int gregflag, ref int year, ref int mon, ref int mday, ref double hour);
 
+        [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_get_planet_name")]
+        private extern static IntPtr _swe_get_planet_name(int ipl, StringBuilder spname);
+        public static string SweGetPlanetName(int ipl)
+        {
+            StringBuilder buffer = new StringBuilder(255);
+            _swe_get_planet_name(ipl, buffer);
+            return buffer.ToString();
+        }
+
+        [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_calc_ut")]
+        private extern static int _swe_calc_ut(double tjd_ut, int ipl, int iflag, double[] xx, StringBuilder serr);
+        public static int SweCalcUT(double tjd_ut, int ipl, int iflag, ref double[] xx, ref string serr)
+        {
+            xx = new double[32];
+            StringBuilder buffer = new StringBuilder(2048);
+            var res = _swe_calc_ut(tjd_ut, ipl, iflag, xx, buffer);
+            serr = buffer.ToString();
+            return res;
+        }
     }
 
 }

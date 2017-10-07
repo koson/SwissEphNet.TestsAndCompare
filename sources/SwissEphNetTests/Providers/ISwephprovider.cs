@@ -27,6 +27,16 @@ namespace SwissEphNetTests.Providers
         void SweRevjul(double jd, bool gregorian, ref int year, ref int mon, ref int mday, ref double hour);
 
         /// <summary>
+        /// Get the name of a planet or asteroid
+        /// </summary>
+        string SweGetPlanetName(int ipl);
+
+        /// <summary>
+        /// Calculate a planet position
+        /// </summary>
+        int SweCalcUT(double tjd_ut, int ipl, int iflag, ref double[] xx, ref string serr);
+
+        /// <summary>
         /// Name of the provider
         /// </summary>
         string Name { get; }

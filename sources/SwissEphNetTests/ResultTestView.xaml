@@ -32,7 +32,10 @@
         </DataTemplate>
         <DataTemplate x:Key="ColHeaderTemplate">
             <Border Width="{StaticResource DataColumnWidth}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1,0,0,0" Padding="2">
-                <TextBlock Text="{Binding}" HorizontalAlignment="Center" FontWeight="Bold" />
+                <StackPanel>
+                    <TextBlock Text="{Binding Provider.Name}" HorizontalAlignment="Center" FontWeight="Bold" />
+                    <TextBlock Text="{Binding TestDelay}" HorizontalAlignment="Center" FontSize="9px"/>
+                </StackPanel>
             </Border>
         </DataTemplate>
         <DataTemplate x:Key="CellTemplate">
@@ -67,7 +70,7 @@
                     </Style.Triggers>
                 </Style>
             </StackPanel.Resources>
-            <TextBlock Text="{Binding Test.Title}" FontWeight="Bold" Style="{StaticResource TitleText}" />
+            <TextBlock Text="{Binding Test.Title}" FontWeight="Bold" Style="{StaticResource TitleText}" TextWrapping="Wrap" />
             <TextBlock Text="{Binding Test.Description}" TextWrapping="Wrap" />
         </StackPanel>
 
@@ -84,7 +87,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <ContentControl ContentTemplate="{StaticResource FirstRowHeaderTemplate}" />
-                    <ItemsControl ItemsSource="{Binding Providers}" Grid.Column="1">
+                    <ItemsControl ItemsSource="{Binding TestValues}" Grid.Column="1">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <ContentControl ContentTemplate="{StaticResource ColHeaderTemplate}" Content="{Binding}" DataContext="{Binding}" />
