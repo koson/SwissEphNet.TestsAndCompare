@@ -17,6 +17,11 @@ namespace SwissEphNetTests.Providers
         string GetVersion();
 
         /// <summary>
+        /// Calculate the julian day of a date
+        /// </summary>
+        double SweJulday(int year, int month, int day, double hour, bool gregorian);
+
+        /// <summary>
         /// Name of the provider
         /// </summary>
         string Name { get; }
