@@ -2,8 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SwissEphNetTests"
+             xmlns:vm="clr-namespace:SwissEphNetTests.ViewModels"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <vm:ModelLocator x:Key="Locator" />
     </Application.Resources>
 </Application>

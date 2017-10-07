@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SwissEphNet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,48 +9,45 @@ namespace SwissEphNetTests.Providers
 {
     public class SwissEphNetProvider : ISwephProvider
     {
+        private SwissEph _sweph;
+
+        public SwissEphNetProvider()
+        {
+            _sweph = new SwissEph();
+        }
+
         #region IDisposable Support
         private bool _disposedValue = false;
-
+        protected void CheckDisposed()
+        {
+            if (_disposedValue)
+                throw new ObjectDisposedException(nameof(SwissEphNetProvider));
+        }
         protected virtual void Dispose(bool disposing)
         {
             if (!_disposedValue)
             {
                 if (disposing)
                 {
-                    // TODO: supprimer l'état managé (objets managés).
+                    _sweph.Dispose();
+                    _sweph = null;
                 }
-
-                // TODO: libérer les ressources non managées (objets non managés) et remplacer un finaliseur ci-dessous.
-                // TODO: définir les champs de grande taille avec la valeur Null.
-
                 _disposedValue = true;
             }
         }
-
-        // TODO: remplacer un finaliseur seulement si la fonction Dispose(bool disposing) ci-dessus a du code pour libérer les ressources non managées.
-        // ~SwissEphNetProvider() {
-        //   // Ne modifiez pas ce code. Placez le code de nettoyage dans Dispose(bool disposing) ci-dessus.
-        //   Dispose(false);
-        // }
-
-        // Ce code est ajouté pour implémenter correctement le modèle supprimable.
         public void Dispose()
         {
-            // Ne modifiez pas ce code. Placez le code de nettoyage dans Dispose(bool disposing) ci-dessus.
             Dispose(true);
-            // TODO: supprimer les marques de commentaire pour la ligne suivante si le finaliseur est remplacé ci-dessus.
-            // GC.SuppressFinalize(this);
         }
         #endregion
 
-
         public string GetVersion()
         {
-            throw new NotImplementedException();
+            return Sweph.swe_version();
         }
 
-
         public string Name => "SwissEph.Net";
+
+        protected SwissEph Sweph { get { CheckDisposed(); return _sweph; } }
     }
 }

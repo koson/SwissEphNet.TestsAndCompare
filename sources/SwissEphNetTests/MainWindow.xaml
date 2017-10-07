@@ -8,6 +8,16 @@
         WindowState="Maximized"
         Title="Swiss Ephemeris Libraries - Tests" Height="350" Width="525">
     <Grid>
-        
+        <ItemsControl ItemsSource="{Binding Versions}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Item1}"/>
+                        <TextBlock Text=" => "/>
+                        <TextBlock Text="{Binding Item2}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </Window>
