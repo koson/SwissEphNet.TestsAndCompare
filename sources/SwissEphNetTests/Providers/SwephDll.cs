@@ -37,6 +37,7 @@ namespace SwissEphNetTests.Providers
         [DllImport("Kernel32.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = false)]
         private static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)]string lpFileName);
 
+        #region Constants
         /***********************************************************
          * definitions for use also by non-C programmers
          ***********************************************************/
@@ -309,7 +310,7 @@ namespace SwissEphNetTests.Providers
         public const string SE_STARFILE = "sefstars.txt";
         public const string SE_ASTNAMFILE = "seasnam.txt";
         public const string SE_FICTFILE = "seorbel.txt";
-
+        #endregion
 
         /// <summary>
         /// Get the library version
@@ -326,6 +327,9 @@ namespace SwissEphNetTests.Providers
 
         [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_julday")]
         public extern static double SweJulday(int year, int month, int day, double hour, int gregflag);
+
+        [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_revjul")]
+        public extern static void SweRevjul(double jd, int gregflag, ref int year, ref int mon, ref int mday, ref double hour);
 
     }
 

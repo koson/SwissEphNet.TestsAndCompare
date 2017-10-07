@@ -36,6 +36,11 @@ namespace SwissEphNetTests.Providers
             return SwephDll.SweJulday(year, month, day, hour, gregorian ? SwephDll.SE_GREG_CAL : SwephDll.SE_JUL_CAL);
         }
 
+        public void SweRevjul(double jd, bool gregorian, ref int year, ref int mon, ref int mday, ref double hour)
+        {
+            SwephDll.SweRevjul(jd, gregorian ? SwephDll.SE_GREG_CAL : SwephDll.SE_JUL_CAL, ref year, ref mon, ref mday, ref hour);
+        }
+
         public string Name => "Swiss Ephemeris DLL";
     }
 }

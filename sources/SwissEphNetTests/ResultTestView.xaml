@@ -31,7 +31,7 @@
         </DataTemplate>
         <DataTemplate x:Key="CellTemplate">
             <Border Width="{StaticResource DataColumnWidth}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1,1,0,0" Padding="2">
-                <TextBlock Text="{Binding Value}" HorizontalAlignment="Right" />
+                <TextBlock Text="{Binding Value}" HorizontalAlignment="Right" TextWrapping="Wrap" />
             </Border>
         </DataTemplate>
 

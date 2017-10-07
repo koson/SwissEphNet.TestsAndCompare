@@ -51,6 +51,11 @@ namespace SwissEphNetTests.Providers
             return Sweph.swe_julday(year, month, day, hour, gregorian ? SwissEph.SE_GREG_CAL : SwissEph.SE_JUL_CAL);
         }
 
+        public void SweRevjul(double jd, bool gregorian, ref int year, ref int mon, ref int mday, ref double hour)
+        {
+            Sweph.swe_revjul(jd, gregorian ? SwissEph.SE_GREG_CAL : SwissEph.SE_JUL_CAL, ref year, ref mon, ref mday, ref hour);
+        }
+
         public string Name => "SwissEph.Net";
 
         protected SwissEph Sweph { get { CheckDisposed(); return _sweph; } }

@@ -90,6 +90,7 @@
     <Compile Include="Tests\ITest.cs" />
     <Compile Include="Tests\ResultTest.cs" />
     <Compile Include="Tests\ResultTestValues.cs" />
+    <Compile Include="Tests\TestReverseJulianDay.cs" />
     <Compile Include="Tests\TestJulianDay.cs" />
     <Compile Include="Tests\TestVersion.cs" />
     <Compile Include="ViewModels\FactoryViewModel.cs" />
