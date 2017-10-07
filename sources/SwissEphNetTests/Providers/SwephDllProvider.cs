@@ -53,6 +53,11 @@ namespace SwissEphNetTests.Providers
             return SwephDll.SweCalcUT(tjd_ut, ipl, iflag, ref xx, ref serr);
         }
 
+        public int SweCalc(double tjd, int ipl, int iflag, ref double[] xx, ref string serr)
+        {
+            return SwephDll.SweCalc(tjd, ipl, iflag, ref xx, ref serr);
+        }
+
         public string Name => "Swiss Ephemeris DLL";
     }
 }

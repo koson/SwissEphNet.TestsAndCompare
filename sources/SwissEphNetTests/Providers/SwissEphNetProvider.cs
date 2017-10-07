@@ -69,6 +69,12 @@ namespace SwissEphNetTests.Providers
             return Sweph.swe_calc_ut(tjd_ut, ipl, iflag, xx, ref serr);
         }
 
+        public int SweCalc(double tjd, int ipl, int iflag, ref double[] xx, ref string serr)
+        {
+            xx = new double[32];
+            return Sweph.swe_calc(tjd, ipl, iflag, xx, ref serr);
+        }
+
         public string Name => "SwissEph.Net";
 
         protected SwissEph Sweph { get { CheckDisposed(); return _sweph; } }

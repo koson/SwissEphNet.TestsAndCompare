@@ -42,6 +42,11 @@ namespace SwissEphNetTests.Providers
         int SweCalcUT(double tjd_ut, int ipl, int iflag, ref double[] xx, ref string serr);
 
         /// <summary>
+        /// Calculate a planet position
+        /// </summary>
+        int SweCalc(double tjd, int ipl, int iflag, ref double[] xx, ref string serr);
+
+        /// <summary>
         /// Name of the provider
         /// </summary>
         string Name { get; }

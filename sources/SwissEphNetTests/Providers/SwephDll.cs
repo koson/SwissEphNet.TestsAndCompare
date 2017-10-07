@@ -351,6 +351,17 @@ namespace SwissEphNetTests.Providers
             return res;
         }
 
+        [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_calc")]
+        private extern static int _swe_calc(double tjd, int ipl, int iflag, double[] xx, StringBuilder serr);
+        public static int SweCalc(double tjd, int ipl, int iflag, ref double[] xx, ref string serr)
+        {
+            xx = new double[32];
+            StringBuilder buffer = new StringBuilder(2048);
+            var res = _swe_calc(tjd, ipl, iflag, xx, buffer);
+            serr = buffer.ToString();
+            return res;
+        }
+
         [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_deltat")]
         public extern static double SweDeltaT(double tjd);
 
