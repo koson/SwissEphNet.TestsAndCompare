@@ -75,6 +75,9 @@ namespace SwissEphNetTests.Providers
             return Sweph.swe_calc(tjd, ipl, iflag, xx, ref serr);
         }
 
+        public void SweSetTopo(double geolon, double geolat, double height)
+            => Sweph.swe_set_topo(geolon, geolat, height);
+
         public string Name => "SwissEph.Net";
 
         protected SwissEph Sweph { get { CheckDisposed(); return _sweph; } }

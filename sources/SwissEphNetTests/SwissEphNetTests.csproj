@@ -90,6 +90,7 @@
     <Compile Include="Tests\ITest.cs" />
     <Compile Include="Tests\ResultTest.cs" />
     <Compile Include="Tests\ResultTestValues.cs" />
+    <Compile Include="Tests\TestSetTopo.cs" />
     <Compile Include="Tests\TestCalc.cs" />
     <Compile Include="Tests\TestCalcJpl.cs" />
     <Compile Include="Tests\TestCalcSwisseph.cs" />

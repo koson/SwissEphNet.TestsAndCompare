@@ -47,6 +47,11 @@ namespace SwissEphNetTests.Providers
         int SweCalc(double tjd, int ipl, int iflag, ref double[] xx, ref string serr);
 
         /// <summary>
+        /// Define the topocentric
+        /// </summary>
+        void SweSetTopo(double geolon, double geolat, double height);
+
+        /// <summary>
         /// Name of the provider
         /// </summary>
         string Name { get; }

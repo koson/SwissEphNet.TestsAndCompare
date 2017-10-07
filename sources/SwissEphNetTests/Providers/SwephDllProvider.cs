@@ -58,6 +58,9 @@ namespace SwissEphNetTests.Providers
             return SwephDll.SweCalc(tjd, ipl, iflag, ref xx, ref serr);
         }
 
+        public void SweSetTopo(double geolon, double geolat, double height)
+            => SwephDll.SweSetTopo(geolon, geolat, height);
+
         public string Name => "Swiss Ephemeris DLL";
     }
 }

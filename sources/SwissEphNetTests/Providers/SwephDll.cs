@@ -365,6 +365,8 @@ namespace SwissEphNetTests.Providers
         [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_deltat")]
         public extern static double SweDeltaT(double tjd);
 
+        [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_set_topo")]
+        public extern static void SweSetTopo(double geolon, double geolat, double height);
     }
 
 }
