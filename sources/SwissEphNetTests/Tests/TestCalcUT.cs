@@ -28,7 +28,7 @@ namespace SwissEphNetTests.Tests
                 string serr = null;
                 var iflgret = provider.SweCalcUT(tjd_ut, p, iflag, ref x2, ref serr);
                 string sname = provider.SweGetPlanetName(p);
-                result.Values[sname] = $"{x2[0]} - {x2[1]} - {x2[2]} - {x2[3]}";
+                result.Values[sname] = $"long: {x2[0]}\nlat: {x2[1]}\ndist: {x2[2]}\nspeed long: {x2[3]}";
             }
         }
 

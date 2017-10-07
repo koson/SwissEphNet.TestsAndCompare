@@ -49,7 +49,7 @@
                         </Style.Triggers>
                     </Style>
                 </Border.Resources>
-                <TextBlock Text="{Binding Value}" HorizontalAlignment="Right" TextWrapping="Wrap" />
+                <TextBlock Text="{Binding Value}" HorizontalAlignment="Right" TextAlignment="Right" TextWrapping="Wrap" />
             </Border>
         </DataTemplate>
 
