@@ -13,19 +13,43 @@
     </Window.Resources>
     <Grid>
         <Grid>
-            <GroupBox Header="Providers">
-                <ItemsControl ItemsSource="{Binding Factories}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
-                                <TextBlock Text=" : "/>
-                                <TextBlock Text="{Binding Version}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </GroupBox>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MaxWidth="200" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <GroupBox Header="Providers">
+                    <ItemsControl ItemsSource="{Binding Factories}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                    <TextBlock Text=" : "/>
+                                    <TextBlock Text="{Binding Version}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </GroupBox>
+                <GroupBox Header="Tests">
+                    <ListBox ItemsSource="{Binding Tests}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <CheckBox IsChecked="{Binding IsSelected}">
+                                        <TextBlock Text="{Binding Title, Mode=OneWay}" FontWeight="Bold"/>
+                                    </CheckBox>
+                                    <TextBlock Grid.Row="1" Text="{Binding Description}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </GroupBox>
+            </StackPanel>
         </Grid>
         <Grid x:Name="grdBusy" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Border Background="White" Opacity="0.75"></Border>

@@ -82,9 +82,14 @@
     <Compile Include="Providers\SwissEphNetProvider.cs" />
     <Compile Include="Providers\SwephDllProviderFactory.cs" />
     <Compile Include="Providers\SwissEphNetProviderFactory.cs" />
+    <Compile Include="Tests\BaseTest.cs" />
+    <Compile Include="Tests\ITest.cs" />
+    <Compile Include="Tests\ResultTest.cs" />
+    <Compile Include="Tests\TestVersion.cs" />
     <Compile Include="ViewModels\FactoryViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ModelLocator.cs" />
+    <Compile Include="ViewModels\TestViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
