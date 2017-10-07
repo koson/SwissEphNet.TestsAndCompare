@@ -350,6 +350,10 @@ namespace SwissEphNetTests.Providers
             serr = buffer.ToString();
             return res;
         }
+
+        [DllImport(SwephDllName, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, EntryPoint = "swe_deltat")]
+        public extern static double SweDeltaT(double tjd);
+
     }
 
 }

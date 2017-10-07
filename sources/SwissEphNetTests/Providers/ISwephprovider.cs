@@ -27,6 +27,11 @@ namespace SwissEphNetTests.Providers
         void SweRevjul(double jd, bool gregorian, ref int year, ref int mon, ref int mday, ref double hour);
 
         /// <summary>
+        /// Calculate the Delta Time between UT and ET
+        /// </summary>
+        double SweDeltaT(double tjd);
+
+        /// <summary>
         /// Get the name of a planet or asteroid
         /// </summary>
         string SweGetPlanetName(int ipl);

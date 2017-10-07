@@ -91,6 +91,7 @@
     <Compile Include="Tests\ResultTest.cs" />
     <Compile Include="Tests\ResultTestValues.cs" />
     <Compile Include="Tests\TestCalcUT.cs" />
+    <Compile Include="Tests\TestDeltaT.cs" />
     <Compile Include="Tests\TestReverseJulianDay.cs" />
     <Compile Include="Tests\TestJulianDay.cs" />
     <Compile Include="Tests\TestVersion.cs" />

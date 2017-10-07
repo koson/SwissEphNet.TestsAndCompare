@@ -56,6 +56,8 @@ namespace SwissEphNetTests.Providers
             Sweph.swe_revjul(jd, gregorian ? SwissEph.SE_GREG_CAL : SwissEph.SE_JUL_CAL, ref year, ref mon, ref mday, ref hour);
         }
 
+        public double SweDeltaT(double tjd) => Sweph.swe_deltat(tjd);
+
         public string SweGetPlanetName(int ipl)
         {
             return Sweph.swe_get_planet_name(ipl);
