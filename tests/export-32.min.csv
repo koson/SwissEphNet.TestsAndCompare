@@ -1,0 +1,555 @@
+﻿test,title,success,value-name,Swiss Ephemeris DLL (x86),SwissEph.Net,value-status
+TestSetTopo,Test set topocentric,false,Topo undefined,"long: 0
+lat: 0
+dist: 0
+speed long: 0","long: 0
+lat: 0
+dist: 0
+speed long: 0",success
+TestSetTopo,Test set topocentric,false,Topo defined,"long: 142,782308418215
+lat: 6,36642058410511E-05
+dist: 1,01269557275762
+speed long: 0,969254107445749","long: 142,782308418216
+lat: 6,36642058426212E-05
+dist: 1,01269557275762
+speed long: 0,969254106877315",success
+TestCalc,Test planet calculation 'swe_calc()',false,Sun,"long: 193,944480943169
+lat: -6,88895212271599E-05
+dist: 0,999456192644219
+speed long: 0,986115011840615","long: 193,944480943169
+lat: -6,88895212271575E-05
+dist: 0,999456192644219
+speed long: 0,986115011841505",success
+TestCalc,Test planet calculation 'swe_calc()',false,Moon,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496277
+speed long: 14,3306187178889","long: 30,4518900930917
+lat: -4,71446605603678
+dist: 0,00247000333496278
+speed long: 14,3306187178761",success
+TestCalc,Test planet calculation 'swe_calc()',false,Mercury,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 1,75635401802829","long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927618
+speed long: 1,7563540182084",success
+TestCalc,Test planet calculation 'swe_calc()',false,Venus,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 1,23490156341856","long: 170,845601392207
+lat: 1,40111306126197
+dist: 1,52063847794354
+speed long: 1,23490156528251",success
+TestCalc,Test planet calculation 'swe_calc()',false,Mars,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0,632454045125676","long: 170,048010916028
+lat: 1,16921538825972
+dist: 2,52962128891445
+speed long: 0,632454051901672",success
+TestCalc,Test planet calculation 'swe_calc()',false,Jupiter,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0,213554917656447","long: 209,244081251874
+lat: 1,03200619475296
+dist: 6,40097627035909
+speed long: 0,213554918960022",success
+TestCalc,Test planet calculation 'swe_calc()',false,Saturn,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0,0649585273475021","long: 262,610099739937
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0,0649585273502683",success
+TestCalc,Test planet calculation 'swe_calc()',false,Uranus,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: -0,0394375639234399","long: 27,0361800219494
+lat: -0,600443938416181
+dist: 18,93707109415
+speed long: -0,0394375605138161",success
+TestCalc,Test planet calculation 'swe_calc()',false,Neptune,"long: 342,031593476532
+lat: -0,939555409475224
+dist: 29,0935156014565
+speed long: -0,0223061755536255","long: 342,03159347653
+lat: -0,939555409472679
+dist: 29,093515601463
+speed long: -0,022306172414591",success
+TestCalc,Test planet calculation 'swe_calc()',false,Pluto,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0,00407896317284019","long: 286,87068298671
+lat: 0,602607671480766
+dist: 33,3545684742917
+speed long: 0,00407896322157109",success
+TestCalc,Test planet calculation 'swe_calc()',false,mean Node,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: -0,0529825656494058","long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: -0,0529825656494058",success
+TestCalc,Test planet calculation 'swe_calc()',false,true Node,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: -0,140570644790458","long: 143,038384664418
+lat: 0
+dist: 0,00254973050570179
+speed long: -0,1405706394413",success
+TestCalc,Test planet calculation 'swe_calc()',false,mean Apogee,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0,111606056594957","long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0,111606056594957",success
+TestCalc,Test planet calculation 'swe_calc()',false,osc. Apogee,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: -0,801151478605326","long: 243,929879678209
+lat: 5,01264117647325
+dist: 0,00271024313583396
+speed long: -0,80115115513485",success
+TestCalc,Test planet calculation 'swe_calc()',false,Chiron,"long: 0
+lat: 0
+dist: 0
+speed long: 0","long: 0
+lat: 0
+dist: 0
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Sun,"long: 193,944480943169
+lat: -6,88895212271604E-05
+dist: 0,999456192644219
+speed long: 0","long: 193,944480943169
+lat: -6,88895212271577E-05
+dist: 0,999456192644219
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Moon,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496278
+speed long: 0","long: 30,4518900930917
+lat: -4,71446605603678
+dist: 0,00247000333496277
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Mercury,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 0","long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927618
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Venus,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 0","long: 170,845601392207
+lat: 1,40111306126197
+dist: 1,52063847794354
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Mars,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0","long: 170,048010916028
+lat: 1,16921538825972
+dist: 2,52962128891445
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Jupiter,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0","long: 209,244081251874
+lat: 1,03200619475296
+dist: 6,40097627035909
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Saturn,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0","long: 262,610099739937
+lat: 1,05162202436747
+dist: 10,3831490425416
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Uranus,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: 0","long: 27,0361800219494
+lat: -0,600443938416182
+dist: 18,93707109415
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Neptune,"long: 342,031593476532
+lat: -0,939555409475223
+dist: 29,0935156014565
+speed long: 0","long: 342,03159347653
+lat: -0,93955540947268
+dist: 29,093515601463
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Pluto,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0","long: 286,87068298671
+lat: 0,602607671480763
+dist: 33,3545684742917
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,mean Node,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0","long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,true Node,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: 0","long: 143,038384664418
+lat: 0
+dist: 0,00254973050570179
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,mean Apogee,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0","long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,osc. Apogee,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: 0","long: 243,929879678209
+lat: 5,01264117647325
+dist: 0,00271024313583396
+speed long: 0",success
+TestCalcJpl,Test planet calculation with JPL ephemeris,false,Chiron,"long: 0
+lat: 0
+dist: 0
+speed long: 0","long: 0
+lat: 0
+dist: 0
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Sun,"long: 193,944480943169
+lat: -6,88895212271604E-05
+dist: 0,999456192644219
+speed long: 0","long: 193,944480943169
+lat: -6,88895212271577E-05
+dist: 0,999456192644219
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Moon,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496278
+speed long: 0","long: 30,4518900930917
+lat: -4,71446605603678
+dist: 0,00247000333496277
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Mercury,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 0","long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927618
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Venus,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 0","long: 170,845601392207
+lat: 1,40111306126197
+dist: 1,52063847794354
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Mars,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0","long: 170,048010916028
+lat: 1,16921538825972
+dist: 2,52962128891445
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Jupiter,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0","long: 209,244081251874
+lat: 1,03200619475296
+dist: 6,40097627035909
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Saturn,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0","long: 262,610099739937
+lat: 1,05162202436747
+dist: 10,3831490425416
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Uranus,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: 0","long: 27,0361800219494
+lat: -0,600443938416182
+dist: 18,93707109415
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Neptune,"long: 342,031593476532
+lat: -0,939555409475223
+dist: 29,0935156014565
+speed long: 0","long: 342,03159347653
+lat: -0,93955540947268
+dist: 29,093515601463
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Pluto,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0","long: 286,87068298671
+lat: 0,602607671480763
+dist: 33,3545684742917
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,mean Node,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0","long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,true Node,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: 0","long: 143,038384664418
+lat: 0
+dist: 0,00254973050570179
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,mean Apogee,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0","long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,osc. Apogee,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: 0","long: 243,929879678209
+lat: 5,01264117647325
+dist: 0,00271024313583396
+speed long: 0",success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,false,Chiron,"long: 0
+lat: 0
+dist: 0
+speed long: 0","long: 0
+lat: 0
+dist: 0
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Sun,"long: 193,944480943169
+lat: -6,88895212271604E-05
+dist: 0,999456192644219
+speed long: 0","long: 193,944480943169
+lat: -6,88895212271577E-05
+dist: 0,999456192644219
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Moon,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496278
+speed long: 0","long: 30,4518900930917
+lat: -4,71446605603678
+dist: 0,00247000333496277
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Mercury,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 0","long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927618
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Venus,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 0","long: 170,845601392207
+lat: 1,40111306126197
+dist: 1,52063847794354
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Mars,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0","long: 170,048010916028
+lat: 1,16921538825972
+dist: 2,52962128891445
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Jupiter,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0","long: 209,244081251874
+lat: 1,03200619475296
+dist: 6,40097627035909
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Saturn,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0","long: 262,610099739937
+lat: 1,05162202436747
+dist: 10,3831490425416
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Uranus,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: 0","long: 27,0361800219494
+lat: -0,600443938416182
+dist: 18,93707109415
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Neptune,"long: 342,031593476532
+lat: -0,939555409475223
+dist: 29,0935156014565
+speed long: 0","long: 342,03159347653
+lat: -0,93955540947268
+dist: 29,093515601463
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Pluto,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0","long: 286,87068298671
+lat: 0,602607671480763
+dist: 33,3545684742917
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,mean Node,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0","long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,true Node,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: 0","long: 143,038384664418
+lat: 0
+dist: 0,00254973050570179
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,mean Apogee,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0","long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,osc. Apogee,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: 0","long: 243,929879678209
+lat: 5,01264117647325
+dist: 0,00271024313583396
+speed long: 0",success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,false,Chiron,"long: 0
+lat: 0
+dist: 0
+speed long: 0","long: 0
+lat: 0
+dist: 0
+speed long: 0",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Sun,"long: 193,944480943169
+lat: -6,88895212271599E-05
+dist: 0,999456192644219
+speed long: 0,986115011840615","long: 193,944480943169
+lat: -6,88895212271575E-05
+dist: 0,999456192644219
+speed long: 0,986115011841505",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Moon,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496277
+speed long: 14,3306187178889","long: 30,4518900930917
+lat: -4,71446605603678
+dist: 0,00247000333496278
+speed long: 14,3306187178761",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Mercury,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 1,75635401802829","long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927618
+speed long: 1,7563540182084",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Venus,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 1,23490156341856","long: 170,845601392207
+lat: 1,40111306126197
+dist: 1,52063847794354
+speed long: 1,23490156528251",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Mars,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0,632454045125676","long: 170,048010916028
+lat: 1,16921538825972
+dist: 2,52962128891445
+speed long: 0,632454051901672",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Jupiter,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0,213554917656447","long: 209,244081251874
+lat: 1,03200619475296
+dist: 6,40097627035909
+speed long: 0,213554918960022",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Saturn,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0,0649585273475021","long: 262,610099739937
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0,0649585273502683",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Uranus,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: -0,0394375639234399","long: 27,0361800219494
+lat: -0,600443938416181
+dist: 18,93707109415
+speed long: -0,0394375605138161",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Neptune,"long: 342,031593476532
+lat: -0,939555409475224
+dist: 29,0935156014565
+speed long: -0,0223061755536255","long: 342,03159347653
+lat: -0,939555409472679
+dist: 29,093515601463
+speed long: -0,022306172414591",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Pluto,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0,00407896317284019","long: 286,87068298671
+lat: 0,602607671480766
+dist: 33,3545684742917
+speed long: 0,00407896322157109",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,mean Node,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: -0,0529825656494058","long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: -0,0529825656494058",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,true Node,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: -0,140570644790458","long: 143,038384664418
+lat: 0
+dist: 0,00254973050570179
+speed long: -0,1405706394413",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,mean Apogee,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0,111606056594957","long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0,111606056594957",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,osc. Apogee,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: -0,801151478605326","long: 243,929879678209
+lat: 5,01264117647325
+dist: 0,00271024313583396
+speed long: -0,80115115513485",success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',false,Chiron,"long: 0
+lat: 0
+dist: 0
+speed long: 0","long: 0
+lat: 0
+dist: 0
+speed long: 0",success
+TestDeltaT,Test Delta Time,true,deltaT,0.000797444178728599,0.000797444178728599,success
+TestReverseJulianDay,Test Reverse Julian day,true,G: 0,y:-4713 - m:11 - d:24 - ut:12,y:-4713 - m:11 - d:24 - ut:12,success
+TestReverseJulianDay,Test Reverse Julian day,true,J: 0,y:-4712 - m:1 - d:1 - ut:12,y:-4712 - m:1 - d:1 - ut:12,success
+TestReverseJulianDay,Test Reverse Julian day,true,G: 2000000,y:763 - m:9 - d:18 - ut:12,y:763 - m:9 - d:18 - ut:12,success
+TestReverseJulianDay,Test Reverse Julian day,true,J: 2000000,y:763 - m:9 - d:14 - ut:12,y:763 - m:9 - d:14 - ut:12,success
+TestReverseJulianDay,Test Reverse Julian day,true,G: 2456774.20375,"y:2014 - m:4 - d:26 - ut:16,8899999968708","y:2014 - m:4 - d:26 - ut:16,8899999968708",success
+TestReverseJulianDay,Test Reverse Julian day,true,G: 2442275.47916667,"y:1974 - m:8 - d:15 - ut:23,5000000745058","y:1974 - m:8 - d:15 - ut:23,5000000745058",success
+TestJulianDay,Test Julian day,true,G: 2017-10-07 14:53,2458033.52583912,2458033.52583912,success
+TestJulianDay,Test Julian day,true,J: 2017-10-07 14:53,2458046.52583912,2458046.52583912,success
+TestJulianDay,Test Julian day,true,G: Minimal,0,0,success
+TestJulianDay,Test Julian day,true,J: Minimal,0,0,success
+TestJulianDay,Test Julian day,true,G: 2000000,1063884,1063884,success
+TestJulianDay,Test Julian day,true,J: 2000000,1063865,1063865,success
+TestJulianDay,Test Julian day,true,G: 1974-08-15 23:30,2442275.47916667,2442275.47916667,success
+TestVersion,Test versions,true,version,2.06,2.06,success

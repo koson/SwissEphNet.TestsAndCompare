@@ -1,0 +1,555 @@
+﻿test,title,success,value-name,p1-name,p1-value,p1-delay,p1-status,p2-name,p2-value,p2-delay,p2-status,value-status
+TestSetTopo,Test set topocentric,true,Topo undefined,Swiss Ephemeris DLL (x64),"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0156099,success,SwissEph.Net,"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.5148012,success,success
+TestSetTopo,Test set topocentric,true,Topo defined,Swiss Ephemeris DLL (x64),"long: 142,782308418215
+lat: 6,36642058410511E-05
+dist: 1,01269557275762
+speed long: 0,969254107445749",00:00:00.0156099,success,SwissEph.Net,"long: 142,782308418215
+lat: 6,36642058410511E-05
+dist: 1,01269557275762
+speed long: 0,969254107445749",00:00:00.5148012,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Sun,Swiss Ephemeris DLL (x64),"long: 193,944480943169
+lat: -6,88895212271599E-05
+dist: 0,999456192644219
+speed long: 0,986115011840615",00:00:00.0135200,success,SwissEph.Net,"long: 193,944480943169
+lat: -6,88895212271599E-05
+dist: 0,999456192644219
+speed long: 0,986115011840615",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Moon,Swiss Ephemeris DLL (x64),"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496277
+speed long: 14,3306187178889",00:00:00.0135200,success,SwissEph.Net,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496277
+speed long: 14,3306187178889",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Mercury,Swiss Ephemeris DLL (x64),"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 1,75635401802829",00:00:00.0135200,success,SwissEph.Net,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 1,75635401802829",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Venus,Swiss Ephemeris DLL (x64),"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 1,23490156341856",00:00:00.0135200,success,SwissEph.Net,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 1,23490156341856",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Mars,Swiss Ephemeris DLL (x64),"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0,632454045125676",00:00:00.0135200,success,SwissEph.Net,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0,632454045125676",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Jupiter,Swiss Ephemeris DLL (x64),"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0,213554917656447",00:00:00.0135200,success,SwissEph.Net,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0,213554917656447",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Saturn,Swiss Ephemeris DLL (x64),"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0,0649585273475021",00:00:00.0135200,success,SwissEph.Net,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0,0649585273475021",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Uranus,Swiss Ephemeris DLL (x64),"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: -0,0394375639234399",00:00:00.0135200,success,SwissEph.Net,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: -0,0394375639234399",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Neptune,Swiss Ephemeris DLL (x64),"long: 342,031593476532
+lat: -0,939555409475224
+dist: 29,0935156014565
+speed long: -0,0223061755536255",00:00:00.0135200,success,SwissEph.Net,"long: 342,031593476532
+lat: -0,939555409475224
+dist: 29,0935156014565
+speed long: -0,0223061755536255",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Pluto,Swiss Ephemeris DLL (x64),"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0,00407896317284019",00:00:00.0135200,success,SwissEph.Net,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0,00407896317284019",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,mean Node,Swiss Ephemeris DLL (x64),"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: -0,0529825656494058",00:00:00.0135200,success,SwissEph.Net,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: -0,0529825656494058",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,true Node,Swiss Ephemeris DLL (x64),"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: -0,140570644790458",00:00:00.0135200,success,SwissEph.Net,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: -0,140570644790458",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,mean Apogee,Swiss Ephemeris DLL (x64),"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0,111606056594957",00:00:00.0135200,success,SwissEph.Net,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0,111606056594957",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,osc. Apogee,Swiss Ephemeris DLL (x64),"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: -0,801151478605326",00:00:00.0135200,success,SwissEph.Net,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: -0,801151478605326",00:00:00.1959035,success,success
+TestCalc,Test planet calculation 'swe_calc()',true,Chiron,Swiss Ephemeris DLL (x64),"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0135200,success,SwissEph.Net,"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.1959035,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Sun,Swiss Ephemeris DLL (x64),"long: 193,944480943169
+lat: -6,88895212271604E-05
+dist: 0,999456192644219
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 193,944480943169
+lat: -6,88895212271604E-05
+dist: 0,999456192644219
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Moon,Swiss Ephemeris DLL (x64),"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496278
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496278
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Mercury,Swiss Ephemeris DLL (x64),"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Venus,Swiss Ephemeris DLL (x64),"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Mars,Swiss Ephemeris DLL (x64),"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Jupiter,Swiss Ephemeris DLL (x64),"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Saturn,Swiss Ephemeris DLL (x64),"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Uranus,Swiss Ephemeris DLL (x64),"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Neptune,Swiss Ephemeris DLL (x64),"long: 342,031593476532
+lat: -0,939555409475223
+dist: 29,0935156014565
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 342,031593476532
+lat: -0,939555409475223
+dist: 29,0935156014565
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Pluto,Swiss Ephemeris DLL (x64),"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,mean Node,Swiss Ephemeris DLL (x64),"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,true Node,Swiss Ephemeris DLL (x64),"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,mean Apogee,Swiss Ephemeris DLL (x64),"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,osc. Apogee,Swiss Ephemeris DLL (x64),"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: 0",00:00:00.0940003,success,success
+TestCalcJpl,Test planet calculation with JPL ephemeris,true,Chiron,Swiss Ephemeris DLL (x64),"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0184503,success,SwissEph.Net,"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0940003,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Sun,Swiss Ephemeris DLL (x64),"long: 193,944480943169
+lat: -6,88895212271604E-05
+dist: 0,999456192644219
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 193,944480943169
+lat: -6,88895212271604E-05
+dist: 0,999456192644219
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Moon,Swiss Ephemeris DLL (x64),"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496278
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496278
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Mercury,Swiss Ephemeris DLL (x64),"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Venus,Swiss Ephemeris DLL (x64),"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Mars,Swiss Ephemeris DLL (x64),"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Jupiter,Swiss Ephemeris DLL (x64),"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Saturn,Swiss Ephemeris DLL (x64),"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Uranus,Swiss Ephemeris DLL (x64),"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Neptune,Swiss Ephemeris DLL (x64),"long: 342,031593476532
+lat: -0,939555409475223
+dist: 29,0935156014565
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 342,031593476532
+lat: -0,939555409475223
+dist: 29,0935156014565
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Pluto,Swiss Ephemeris DLL (x64),"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,mean Node,Swiss Ephemeris DLL (x64),"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,true Node,Swiss Ephemeris DLL (x64),"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,mean Apogee,Swiss Ephemeris DLL (x64),"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,osc. Apogee,Swiss Ephemeris DLL (x64),"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: 0",00:00:00.0106342,success,success
+TestCalcSwisseph,Test planet calculation with SWISSEPH ephemeris,true,Chiron,Swiss Ephemeris DLL (x64),"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0064350,success,SwissEph.Net,"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0106342,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Sun,Swiss Ephemeris DLL (x64),"long: 193,944480943169
+lat: -6,88895212271604E-05
+dist: 0,999456192644219
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 193,944480943169
+lat: -6,88895212271604E-05
+dist: 0,999456192644219
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Moon,Swiss Ephemeris DLL (x64),"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496278
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496278
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Mercury,Swiss Ephemeris DLL (x64),"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Venus,Swiss Ephemeris DLL (x64),"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Mars,Swiss Ephemeris DLL (x64),"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Jupiter,Swiss Ephemeris DLL (x64),"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Saturn,Swiss Ephemeris DLL (x64),"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Uranus,Swiss Ephemeris DLL (x64),"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Neptune,Swiss Ephemeris DLL (x64),"long: 342,031593476532
+lat: -0,939555409475223
+dist: 29,0935156014565
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 342,031593476532
+lat: -0,939555409475223
+dist: 29,0935156014565
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Pluto,Swiss Ephemeris DLL (x64),"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,mean Node,Swiss Ephemeris DLL (x64),"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,true Node,Swiss Ephemeris DLL (x64),"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,mean Apogee,Swiss Ephemeris DLL (x64),"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,osc. Apogee,Swiss Ephemeris DLL (x64),"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: 0",00:00:00.0012189,success,success
+TestCalcMoshier,Test planet calculation with Moshier ephemeris,true,Chiron,Swiss Ephemeris DLL (x64),"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0031224,success,SwissEph.Net,"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0012189,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Sun,Swiss Ephemeris DLL (x64),"long: 193,944480943169
+lat: -6,88895212271599E-05
+dist: 0,999456192644219
+speed long: 0,986115011840615",00:00:00.0100761,success,SwissEph.Net,"long: 193,944480943169
+lat: -6,88895212271599E-05
+dist: 0,999456192644219
+speed long: 0,986115011840615",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Moon,Swiss Ephemeris DLL (x64),"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496277
+speed long: 14,3306187178889",00:00:00.0100761,success,SwissEph.Net,"long: 30,4518900930915
+lat: -4,71446605603676
+dist: 0,00247000333496277
+speed long: 14,3306187178889",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Mercury,Swiss Ephemeris DLL (x64),"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 1,75635401802829",00:00:00.0100761,success,SwissEph.Net,"long: 192,547301108404
+lat: 1,27840481169972
+dist: 1,39793273927619
+speed long: 1,75635401802829",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Venus,Swiss Ephemeris DLL (x64),"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 1,23490156341856",00:00:00.0100761,success,SwissEph.Net,"long: 170,845601392207
+lat: 1,40111306126206
+dist: 1,52063847794352
+speed long: 1,23490156341856",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Mars,Swiss Ephemeris DLL (x64),"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0,632454045125676",00:00:00.0100761,success,SwissEph.Net,"long: 170,048010916028
+lat: 1,16921538825956
+dist: 2,52962128891445
+speed long: 0,632454045125676",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Jupiter,Swiss Ephemeris DLL (x64),"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0,213554917656447",00:00:00.0100761,success,SwissEph.Net,"long: 209,244081251873
+lat: 1,03200619475292
+dist: 6,40097627035938
+speed long: 0,213554917656447",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Saturn,Swiss Ephemeris DLL (x64),"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0,0649585273475021",00:00:00.0100761,success,SwissEph.Net,"long: 262,610099739938
+lat: 1,05162202436748
+dist: 10,3831490425416
+speed long: 0,0649585273475021",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Uranus,Swiss Ephemeris DLL (x64),"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: -0,0394375639234399",00:00:00.0100761,success,SwissEph.Net,"long: 27,0361800219604
+lat: -0,600443938415899
+dist: 18,9370710941475
+speed long: -0,0394375639234399",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Neptune,Swiss Ephemeris DLL (x64),"long: 342,031593476532
+lat: -0,939555409475224
+dist: 29,0935156014565
+speed long: -0,0223061755536255",00:00:00.0100761,success,SwissEph.Net,"long: 342,031593476532
+lat: -0,939555409475224
+dist: 29,0935156014565
+speed long: -0,0223061755536255",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Pluto,Swiss Ephemeris DLL (x64),"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0,00407896317284019",00:00:00.0100761,success,SwissEph.Net,"long: 286,870682986704
+lat: 0,602607671480774
+dist: 33,3545684742907
+speed long: 0,00407896317284019",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,mean Node,Swiss Ephemeris DLL (x64),"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: -0,0529825656494058",00:00:00.0100761,success,SwissEph.Net,"long: 141,449233316521
+lat: 0
+dist: 0,00256955528995458
+speed long: -0,0529825656494058",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,true Node,Swiss Ephemeris DLL (x64),"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: -0,140570644790458",00:00:00.0100761,success,SwissEph.Net,"long: 143,038384666022
+lat: 0
+dist: 0,00254973050561842
+speed long: -0,140570644790458",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,mean Apogee,Swiss Ephemeris DLL (x64),"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0,111606056594957",00:00:00.0100761,success,SwissEph.Net,"long: 266,303048296132
+lat: 4,22608517112254
+dist: 0,00271062513188562
+speed long: 0,111606056594957",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,osc. Apogee,Swiss Ephemeris DLL (x64),"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: -0,801151478605326",00:00:00.0100761,success,SwissEph.Net,"long: 243,929879716032
+lat: 5,01264117592477
+dist: 0,00271024313591402
+speed long: -0,801151478605326",00:00:00.0112802,success,success
+TestCalcUT,Test planet calculation 'swe_calc_ut()',true,Chiron,Swiss Ephemeris DLL (x64),"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0100761,success,SwissEph.Net,"long: 0
+lat: 0
+dist: 0
+speed long: 0",00:00:00.0112802,success,success
+TestDeltaT,Test Delta Time,true,deltaT,Swiss Ephemeris DLL (x64),0.000797444178728599,00:00:00.0076730,success,SwissEph.Net,0.000797444178728599,00:00:00.0004802,success,success
+TestReverseJulianDay,Test Reverse Julian day,true,G: 0,Swiss Ephemeris DLL (x64),y:-4713 - m:11 - d:24 - ut:12,00:00:00.0047256,success,SwissEph.Net,y:-4713 - m:11 - d:24 - ut:12,00:00:00.0006321,success,success
+TestReverseJulianDay,Test Reverse Julian day,true,J: 0,Swiss Ephemeris DLL (x64),y:-4712 - m:1 - d:1 - ut:12,00:00:00.0047256,success,SwissEph.Net,y:-4712 - m:1 - d:1 - ut:12,00:00:00.0006321,success,success
+TestReverseJulianDay,Test Reverse Julian day,true,G: 2000000,Swiss Ephemeris DLL (x64),y:763 - m:9 - d:18 - ut:12,00:00:00.0047256,success,SwissEph.Net,y:763 - m:9 - d:18 - ut:12,00:00:00.0006321,success,success
+TestReverseJulianDay,Test Reverse Julian day,true,J: 2000000,Swiss Ephemeris DLL (x64),y:763 - m:9 - d:14 - ut:12,00:00:00.0047256,success,SwissEph.Net,y:763 - m:9 - d:14 - ut:12,00:00:00.0006321,success,success
+TestReverseJulianDay,Test Reverse Julian day,true,G: 2456774.20375,Swiss Ephemeris DLL (x64),"y:2014 - m:4 - d:26 - ut:16,8899999968708",00:00:00.0047256,success,SwissEph.Net,"y:2014 - m:4 - d:26 - ut:16,8899999968708",00:00:00.0006321,success,success
+TestReverseJulianDay,Test Reverse Julian day,true,G: 2442275.47916667,Swiss Ephemeris DLL (x64),"y:1974 - m:8 - d:15 - ut:23,5000000745058",00:00:00.0047256,success,SwissEph.Net,"y:1974 - m:8 - d:15 - ut:23,5000000745058",00:00:00.0006321,success,success
+TestJulianDay,Test Julian day,true,G: 2017-10-07 14:53,Swiss Ephemeris DLL (x64),2458033.52583912,00:00:00.0020967,success,SwissEph.Net,2458033.52583912,00:00:00.0000060,success,success
+TestJulianDay,Test Julian day,true,J: 2017-10-07 14:53,Swiss Ephemeris DLL (x64),2458046.52583912,00:00:00.0020967,success,SwissEph.Net,2458046.52583912,00:00:00.0000060,success,success
+TestJulianDay,Test Julian day,true,G: Minimal,Swiss Ephemeris DLL (x64),0,00:00:00.0020967,success,SwissEph.Net,0,00:00:00.0000060,success,success
+TestJulianDay,Test Julian day,true,J: Minimal,Swiss Ephemeris DLL (x64),0,00:00:00.0020967,success,SwissEph.Net,0,00:00:00.0000060,success,success
+TestJulianDay,Test Julian day,true,G: 2000000,Swiss Ephemeris DLL (x64),1063884,00:00:00.0020967,success,SwissEph.Net,1063884,00:00:00.0000060,success,success
+TestJulianDay,Test Julian day,true,J: 2000000,Swiss Ephemeris DLL (x64),1063865,00:00:00.0020967,success,SwissEph.Net,1063865,00:00:00.0000060,success,success
+TestJulianDay,Test Julian day,true,G: 1974-08-15 23:30,Swiss Ephemeris DLL (x64),2442275.47916667,00:00:00.0020967,success,SwissEph.Net,2442275.47916667,00:00:00.0000060,success,success
+TestVersion,Test versions,true,version,Swiss Ephemeris DLL (x64),2.06,00:00:00.0003594,success,SwissEph.Net,2.06,00:00:00.0000145,success,success
