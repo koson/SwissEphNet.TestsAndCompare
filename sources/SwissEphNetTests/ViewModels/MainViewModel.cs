@@ -29,9 +29,13 @@ namespace SwissEphNetTests.ViewModels
                 () => !IsBusy
                 );
 
-            ExportResultsCommand = new RelayCommand(
-                async () => await ExportResultsAsync(),
-                () => TestResults.Count>0
+            ExportToCsvCommand = new RelayCommand(
+                async () => await ExportResultsAsync(ExportFormat.CSV),
+                () => TestResults.Count > 0
+                );
+            ExportToMinimalCsvCommand = new RelayCommand(
+                async () => await ExportResultsAsync(ExportFormat.MinimalCSV),
+                () => TestResults.Count > 0
                 );
         }
 
@@ -110,7 +114,7 @@ namespace SwissEphNetTests.ViewModels
             }
         }
 
-        public async Task ExportResultsAsync()
+        public async Task ExportResultsAsync(ExportFormat format)
         {
             if (IsBusy) return;
             IsBusy = true;
@@ -123,7 +127,7 @@ namespace SwissEphNetTests.ViewModels
                 {
                     await Task.Run(() =>
                     {
-                        _engine.ExportTests(results, stream);
+                        _engine.ExportTests(results, stream, format);
                     });
                 }
             }
@@ -147,13 +151,15 @@ namespace SwissEphNetTests.ViewModels
                 if (Set(ref _isBusy, value))
                 {
                     RunTestsCommand.RaiseCanExecuteChanged();
-                    ExportResultsCommand.RaiseCanExecuteChanged();
+                    ExportToCsvCommand.RaiseCanExecuteChanged();
+                    ExportToMinimalCsvCommand.RaiseCanExecuteChanged();
                 }
             }
         }
         private bool _isBusy;
 
         public RelayCommand RunTestsCommand { get; private set; }
-        public RelayCommand ExportResultsCommand { get; private set; }
+        public RelayCommand ExportToCsvCommand { get; private set; }
+        public RelayCommand ExportToMinimalCsvCommand { get; private set; }
     }
 }
