@@ -124,6 +124,7 @@
     <Compile Include="ResultTestView.xaml.cs">
       <DependentUpon>ResultTestView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\TestEngine.cs" />
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="Tests\ITest.cs" />
     <Compile Include="Tests\ResultTest.cs" />

@@ -1,10 +1,10 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using SwissEphNetTests.Services;
 using SwissEphNetTests.Tests;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +13,11 @@ namespace SwissEphNetTests.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        public MainViewModel()
+        private TestEngine _engine;
+
+        public MainViewModel(TestEngine engine)
         {
+            _engine = engine;
             Factories = new ObservableCollection<FactoryViewModel>();
             Tests = new ObservableCollection<TestViewModel>();
             TestResults = new ObservableCollection<ResultTestViewModel>();
@@ -28,18 +31,15 @@ namespace SwissEphNetTests.ViewModels
         public async Task LoadTestsAsync()
         {
             IsBusy = true;
-            // Init
-            var catalog = new AssemblyCatalog(this.GetType().Assembly);
-            CompositionContainer container = new CompositionContainer(catalog);
             // Factories
             var factoriesResult = await Task.Run(() =>
             {
                 List<FactoryViewModel> factories = new List<FactoryViewModel>();
-                foreach (var factory in container.GetExports<Providers.ISwephProviderFactory>())
+                foreach (var factory in _engine.GetProviderFactories())
                 {
                     var vm = new FactoryViewModel
                     {
-                        Factory = factory.Value
+                        Factory = factory
                     };
                     try
                     {
@@ -61,11 +61,11 @@ namespace SwissEphNetTests.ViewModels
             var testsResult = await Task.Run(() =>
             {
                 List<TestViewModel> tests = new List<TestViewModel>();
-                foreach (var test in container.GetExports<ITest>())
+                foreach (var test in _engine.GetTests())
                 {
                     var vm = new TestViewModel
                     {
-                        Test = test.Value,
+                        Test = test,
                         IsSelected = true
                     };
                     tests.Add(vm);
@@ -91,14 +91,11 @@ namespace SwissEphNetTests.ViewModels
                 IProgress<ResultTestViewModel> progress = new Progress<ResultTestViewModel>(r => TestResults.Add(r));
                 await Task.Run(() =>
                 {
-                    foreach (var test in tests)
+                    foreach (var result in _engine.RunTests(providers, tests))
                     {
-                        var result = test.RunTest(providers);
                         progress.Report(new ResultTestViewModel { Result = result });
                     }
                 });
-                foreach (var provider in providers)
-                    provider.Dispose();
             }
             finally
             {

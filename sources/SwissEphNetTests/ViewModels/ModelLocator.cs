@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using SwissEphNetTests.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace SwissEphNetTests.ViewModels
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
 
+            SimpleIoc.Default.Register<TestEngine>();
             SimpleIoc.Default.Register<MainViewModel>();
         }
 
