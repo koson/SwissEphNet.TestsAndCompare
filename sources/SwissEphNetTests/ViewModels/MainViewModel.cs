@@ -14,10 +14,12 @@ namespace SwissEphNetTests.ViewModels
     public class MainViewModel : ViewModelBase
     {
         private TestEngine _engine;
+        private IShellService _shell;
 
-        public MainViewModel(TestEngine engine)
+        public MainViewModel(TestEngine engine, IShellService shell)
         {
             _engine = engine;
+            _shell = shell;
             Factories = new ObservableCollection<FactoryViewModel>();
             Tests = new ObservableCollection<TestViewModel>();
             TestResults = new ObservableCollection<ResultTestViewModel>();
@@ -25,6 +27,11 @@ namespace SwissEphNetTests.ViewModels
             RunTestsCommand = new RelayCommand(
                 async () => await RunTestsAsync(),
                 () => !IsBusy
+                );
+
+            ExportResultsCommand = new RelayCommand(
+                async () => await ExportResultsAsync(),
+                () => TestResults.Count>0
                 );
         }
 
@@ -103,6 +110,29 @@ namespace SwissEphNetTests.ViewModels
             }
         }
 
+        public async Task ExportResultsAsync()
+        {
+            if (IsBusy) return;
+            IsBusy = true;
+            try
+            {
+                var fileName = _shell.SelectedWriteFile("Select the exported file", "CSV files (*.csv)|*.csv|All files (*.*)|*.*", ".csv");
+                if (string.IsNullOrWhiteSpace(fileName)) return;
+                var results = TestResults.Select(r => r.Result).ToList();
+                using (var stream = System.IO.File.Create(fileName))
+                {
+                    await Task.Run(() =>
+                    {
+                        _engine.ExportTests(results, stream);
+                    });
+                }
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
         public ObservableCollection<FactoryViewModel> Factories { get; private set; }
 
         public ObservableCollection<TestViewModel> Tests { get; private set; }
@@ -117,12 +147,13 @@ namespace SwissEphNetTests.ViewModels
                 if (Set(ref _isBusy, value))
                 {
                     RunTestsCommand.RaiseCanExecuteChanged();
+                    ExportResultsCommand.RaiseCanExecuteChanged();
                 }
             }
         }
         private bool _isBusy;
 
         public RelayCommand RunTestsCommand { get; private set; }
-
+        public RelayCommand ExportResultsCommand { get; private set; }
     }
 }

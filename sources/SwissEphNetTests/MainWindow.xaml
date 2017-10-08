@@ -57,8 +57,16 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <StackPanel Margin="4">
+                <StackPanel Margin="4" Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="MinWidth" Value="80" />
+                            <Setter Property="Margin" Value="0,0,4,0" />
+                            <Setter Property="Padding" Value="8,2" />
+                        </Style>
+                    </StackPanel.Resources>
                     <Button Content="Run selected tests" Command="{Binding RunTestsCommand}" />
+                    <Button Content="Export results" Command="{Binding ExportResultsCommand}" />
                 </StackPanel>
 
                 <ListBox ItemsSource="{Binding TestResults}" Grid.Row="1" Margin="4" ScrollViewer.CanContentScroll="False">

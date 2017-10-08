@@ -3,6 +3,8 @@ using SwissEphNetTests.Tests;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,5 +66,67 @@ namespace SwissEphNetTests.Services
             }
         }
 
+        static string CsvEncode(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value)) return value;
+            if (value.IndexOfAny(new[] { '"', '\n', '\r', ',', ';' }) >= 0)
+            {
+                return $"\"{value.Replace("\"", "\"\"")}\"";
+            }
+            return value;
+        }
+
+        /// <summary>
+        /// Export the result of tests in a stream
+        /// </summary>
+        public void ExportTests(IEnumerable<ResultTest> tests, Stream destination)
+        {
+            var providers = tests.SelectMany(t => t.TestValues.Keys).Distinct().ToList();
+            using (var writer = new StreamWriter(destination, Encoding.UTF8, 4096, true))
+            {
+                // Write header
+                writer.Write("test,title,success,value-name,");
+                for (int p = 0; p < providers.Count; p++)
+                    writer.Write($"p{p + 1}-name,p{p + 1}-value,p{p + 1}-delay,p{p + 1}-status,");
+                writer.WriteLine("value-status");
+                // Write result
+                foreach (var test in tests)
+                {
+                    string testfields = $"{CsvEncode(test.Test.Name)},{CsvEncode(test.Test.Title)},{(test.Success ? "true" : "false")},";
+                    string valueStatus = "success";
+                    foreach (string valueName in test.ValueNames)
+                    {
+                        writer.Write(testfields);
+                        writer.Write(CsvEncode(valueName));
+                        writer.Write(",");
+                        for (int p = 0; p < providers.Count; p++)
+                        {
+                            if (test.TestValues.TryGetValue(providers[p], out ResultTestValues values))
+                            {
+                                values.Values.TryGetValue(valueName, out object valValue);
+                                string valValueStr = valValue?.ToString();
+                                if (valValue is DateTime dt) valValueStr = dt.ToString("o");
+                                else if (valValue is DateTimeOffset dto) valValueStr = dto.ToString("o");
+                                else if (valValue is float flt) valValueStr = flt.ToString(CultureInfo.InvariantCulture);
+                                else if (valValue is double dbl) valValueStr = dbl.ToString(CultureInfo.InvariantCulture);
+                                else if (valValue is decimal dec) valValueStr = dec.ToString(CultureInfo.InvariantCulture);
+                                string valStatus = "success";
+                                if (values.Error != null)
+                                {
+                                    valStatus = $"#err:{values.Error.Message}";
+                                    valueStatus = "failed";
+                                }
+                                writer.Write($"{CsvEncode(providers[p])},{CsvEncode(valValueStr)},{CsvEncode(values.TestDelay.ToString())},{CsvEncode(valStatus)},");
+                            }
+                            else
+                            {
+                                writer.Write($"{providers[p]},,,none,");
+                            }
+                        }
+                        writer.WriteLine(valueStatus);
+                    }
+                }
+            }
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace SwissEphNetTests.ViewModels
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
 
+            SimpleIoc.Default.Register<IShellService>(() => App.Current as IShellService);
             SimpleIoc.Default.Register<TestEngine>();
             SimpleIoc.Default.Register<MainViewModel>();
         }
