@@ -11,6 +11,6 @@ namespace SwissEphNetTests.Providers
     public class SwephDllProviderFactory : ISwephProviderFactory
     {
         public ISwephProvider CreateProvider() => new SwephDllProvider();
-        public string Name => "Swiss Ephemeris DLL";
+        public string Name => $"Swiss Ephemeris DLL ({SwephDll.Platform})";
     }
 }

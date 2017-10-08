@@ -61,6 +61,6 @@ namespace SwissEphNetTests.Providers
         public void SweSetTopo(double geolon, double geolat, double height)
             => SwephDll.SweSetTopo(geolon, geolat, height);
 
-        public string Name => "Swiss Ephemeris DLL";
+        public string Name => $"Swiss Ephemeris DLL ({SwephDll.Platform})";
     }
 }

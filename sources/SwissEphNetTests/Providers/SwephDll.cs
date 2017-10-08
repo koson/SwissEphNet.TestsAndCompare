@@ -25,9 +25,9 @@ namespace SwissEphNetTests.Providers
         static SwephDll()
         {
             // Check the size of the pointer
-            String folder = IntPtr.Size == 8 ? "x64" : "x86";
+            Platform = IntPtr.Size == 8 ? "x64" : "x86";
             // Build the full library file name
-            String libraryFile = Path.Combine(Path.GetDirectoryName(typeof(SwephDll).Assembly.Location), "libraries", folder, SwephDllName);
+            String libraryFile = Path.Combine(Path.GetDirectoryName(typeof(SwephDll).Assembly.Location), "libraries", Platform, SwephDllName);
             // Load the library
             var res = LoadLibrary(libraryFile);
             if (res == IntPtr.Zero)
@@ -36,6 +36,11 @@ namespace SwissEphNetTests.Providers
 
         [DllImport("Kernel32.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = false)]
         private static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)]string lpFileName);
+
+        /// <summary>
+        /// Loaded platform
+        /// </summary>
+        public static string Platform { get; private set; }
 
         #region Constants
         /***********************************************************
